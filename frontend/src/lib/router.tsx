@@ -1,6 +1,7 @@
 import { generatePath } from 'react-router';
 import NotFoundComponent from '../components/404';
 import AuthToken from '../components/account/Auth';
+import FluxUI from '../components/App/Flux-ui';
 import Home from '../components/App/Home';
 import NotificationList from '../components/App/Notifications/List';
 import PluginSettings from '../components/App/PluginSettings';
@@ -752,6 +753,22 @@ const defaultRoutes: {
     noAuthRequired: true,
     disabled: !helpers.isElectron(),
     component: () => <KubeConfigLoader />,
+  },
+  fluxUi: {
+    path: '/flux-ui',
+    exact: true,
+    name: 'Flux UI by Gimlet',
+    sidebar: {
+      item: 'flux-ui',
+      sidebar: DefaultSidebars.HOME,
+    },
+    useClusterURL: false,
+    noAuthRequired: true,
+    component: () => (
+      <PageGrid>
+        <FluxUI />
+      </PageGrid>
+    ),
   },
 };
 

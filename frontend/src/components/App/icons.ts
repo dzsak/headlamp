@@ -311,6 +311,9 @@ const mdiIcons = {
     star: {
       body: '<path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2L9.19 8.62L2 9.24l5.45 4.73L5.82 21z"/>',
     },
+    cube: {
+      body: '<path fill="currentColor" d="M12,10,3,6l9-4,9,4Zm-1,2L3,8V18l8,4Zm10,6V8l-8,4V22Z"/>',
+    },
   },
   aliases: {
     'more-vert': {

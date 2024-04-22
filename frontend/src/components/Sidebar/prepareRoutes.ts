@@ -32,6 +32,12 @@ function prepareRoutes(
       url: '/notifications',
     },
     {
+      name: 'flux-ui',
+      icon: 'mdi:cube',
+      label: t('translation|Flux UI'),
+      url: '/flux-ui',
+    },
+    {
       name: 'settings',
       icon: 'mdi:cog',
       label: t('translation|Settings'),
