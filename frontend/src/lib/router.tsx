@@ -2,6 +2,9 @@ import { generatePath } from 'react-router';
 import NotFoundComponent from '../components/404';
 import AuthToken from '../components/account/Auth';
 import FluxUI from '../components/App/Flux-ui';
+import FluxUIClusterItems from '../components/App/Flux-ui/FluxUiCluster';
+import FluxUIPods from '../components/App/Flux-ui/FluxUiPods';
+import FluxUISources from '../components/App/Flux-ui/FluxUiSources';
 import Home from '../components/App/Home';
 import NotificationList from '../components/App/Notifications/List';
 import PluginSettings from '../components/App/PluginSettings';
@@ -754,12 +757,12 @@ const defaultRoutes: {
     disabled: !helpers.isElectron(),
     component: () => <KubeConfigLoader />,
   },
-  fluxUi: {
+  fluxUiHome: {
     path: '/flux-ui',
     exact: true,
     name: 'Flux UI by Gimlet',
     sidebar: {
-      item: 'flux-ui',
+      item: 'flux-ui-home',
       sidebar: DefaultSidebars.HOME,
     },
     useClusterURL: false,
@@ -769,6 +772,45 @@ const defaultRoutes: {
         <FluxUI />
       </PageGrid>
     ),
+  },
+  fluxUiHomePods: {
+    path: '/flux-ui/pods',
+    exact: true,
+    name: 'Pods',
+    sidebar: {
+      item: 'pods',
+      sidebar: DefaultSidebars.HOME,
+    },
+    useClusterURL: false,
+    noAuthRequired: true,
+    component: () => (
+      <PageGrid>
+        <FluxUIPods />
+      </PageGrid>
+    ),
+  },
+  fluxUiHomeSources: {
+    path: '/flux-ui/sources',
+    exact: true,
+    name: 'Sources',
+    sidebar: {
+      item: 'sources',
+      sidebar: DefaultSidebars.HOME,
+    },
+    useClusterURL: false,
+    noAuthRequired: true,
+    component: () => (
+      <PageGrid>
+        <FluxUISources />
+      </PageGrid>
+    ),
+  },
+  fluxUi: {
+    path: '/fluxui',
+    exact: true,
+    sidebar: 'fluxui',
+    name: 'Flux UI',
+    component: () => <FluxUIClusterItems />,
   },
 };
 

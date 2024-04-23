@@ -32,10 +32,22 @@ function prepareRoutes(
       url: '/notifications',
     },
     {
-      name: 'flux-ui',
+      name: 'flux-ui-home',
       icon: 'mdi:cube',
       label: t('translation|Flux UI'),
       url: '/flux-ui',
+      subList: [
+        {
+          name: 'pods',
+          label: t('translation|Flux UI Pods'),
+          url: '/flux-ui/pods',
+        },
+        {
+          name: 'sources',
+          label: t('translation|Flux UI Sources'),
+          url: '/flux-ui/sources',
+        },
+      ],
     },
     {
       name: 'settings',
@@ -184,6 +196,11 @@ function prepareRoutes(
           label: t('glossary|Role Bindings'),
         },
       ],
+    },
+    {
+      name: 'fluxui',
+      label: t('glossary|Flux UI'),
+      icon: 'mdi:cube',
     },
     {
       name: 'config',
